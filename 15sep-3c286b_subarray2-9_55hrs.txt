@@ -1,0 +1,1294 @@
+#!/usr/bin/python
+# holography command file
+
+# import required libraries for TGC
+from tgcall import *
+import time
+import userproc
+from userproc import rfi_fil_sleep
+import corrapi_fstrt
+from gwbproc import *
+
+# setup
+CORR='GWB'
+trk_sub=1
+cor_sub=0
+src='3C286'
+trk=1 # 1-out, 0-in
+
+# add source catalog/list
+add_user_catalog('/data1/gtac/cmd/holo/src_3c286.csv','type1')
+use_catalog('src_3c286','type1')
+
+# track source/cal
+load_source(src)
+track_array(trk_sub,timeout=10)
+set_srv_time(trk_sub)
+mon_script()
+
+# 0 3C286
+wait('9:54:43','15/9/2024')
+load_source('3C286')
+track_off(trk_sub,0.0,0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 1 3C286
+wait('9:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,0.0,0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 2 PN0001
+wait('9:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0001')
+track_off(trk_sub,0.05468694844198967,0.21429700179324696,timeout=5)   #  196", 771"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0001')
+# 3 PN0002
+wait('10:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0002')
+track_off(trk_sub,0.21478192271572352,0.39747121408998826,timeout=5)   #  773", 1430"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0002')
+# 4 PN0003
+wait('10:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0003')
+track_off(trk_sub,0.46640899620993026,0.5208946013586886,timeout=5)   #  1679", 1875"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0003')
+# 5 PN0004
+wait('10:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0004')
+track_off(trk_sub,0.785713534669155,0.5607608125958097,timeout=5)   #  2828", 2018"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0004')
+# 6 PN0005
+wait('10:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0005')
+track_off(trk_sub,1.1404058085293984,0.5000868298478213,timeout=5)   #  4105", 1800"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0005')
+# 7 PN0006
+wait('10:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0006')
+track_off(trk_sub,1.492242034112407,0.33025199714850156,timeout=5)   #  5372", 1188"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0006')
+# 8 PN0007
+wait('10:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0007')
+track_off(trk_sub,1.800253057172733,0.05196578742762144,timeout=5)   #  6480", 187"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0007')
+# 9 PN0008
+wait('10:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0008')
+track_off(trk_sub,2.0243662129613207,-0.3244087550226452,timeout=5)   #  7287", -1167"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0008')
+# 10 PN0009
+wait('10:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0009')
+track_off(trk_sub,2.1289710876074355,-0.7792085937482371,timeout=5)   #  7664", -2805"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0009')
+# 11 PN0010
+wait('10:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0010')
+track_off(trk_sub,2.085999071168347,-1.2844912387320075,timeout=5)   #  7509", -4624"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0010')
+# 12 PN0011
+wait('10:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0011')
+track_off(trk_sub,1.8772068704803841,-1.8056695737257697,timeout=5)   #  6757", -6500"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0011')
+# 13 PN0012
+wait('10:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0012')
+track_off(trk_sub,1.4955317982843097,-2.3036683984417645,timeout=5)   #  5383", -8293"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0012')
+# 14 PN0013
+wait('10:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0013')
+track_off(trk_sub,0.9455528862782563,-2.737475329448265,timeout=5)   #  3403", -9854"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0013')
+# 15 PN0014
+wait('10:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0014')
+track_off(trk_sub,0.2432036526819427,-3.0669311796582495,timeout=5)   #  875", -11040"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0014')
+# 16 PN0015
+wait('10:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0015')
+track_off(trk_sub,-0.5850774642670702,-3.25558640465824,timeout=5)   #  -2106", -11720"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0015')
+# 17 PN0016
+wait('10:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0016')
+track_off(trk_sub,-1.503577665993081,-3.2734418923143367,timeout=5)   #  -5412", -11784"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0016')
+# 18 PN0017
+wait('10:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0017')
+track_off(trk_sub,-2.4687688294512604,-3.099394926003986,timeout=5)   #  -8887", -11157"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0017')
+# 19 PN0018
+wait('10:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0018')
+track_off(trk_sub,-4.065115951561467,-1.6441383622536596,timeout=5)   #  -14634", -5918"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0018')
+# 20 PN0019
+wait('10:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0019')
+track_off(trk_sub,-3.320456240029739,-2.197227483494549,timeout=5)   #  -11953", -7910"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0019')
+# 21 PN0020
+wait('10:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0020')
+track_off(trk_sub,-2.4964697680904764,-2.5701810515099206,timeout=5)   #  -8987", -9252"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0020')
+# 22 PN0021
+wait('10:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0021')
+track_off(trk_sub,-1.645531043878744,-2.759912467019831,timeout=5)   #  -5923", -9935"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0021')
+# 23 PN0022
+wait('10:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0022')
+track_off(trk_sub,-0.8168358430697908,-2.775004789019947,timeout=5)   #  -2940", -9990"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0022')
+# 24 PN0023
+wait('10:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0023')
+track_off(trk_sub,-0.05456088632499982,-2.6344490200423256,timeout=5)   #  -196", -9484"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0023')
+# 25 PN0024
+wait('10:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0024')
+track_off(trk_sub,0.6038030676753562,-2.3657855286854166,timeout=5)   #  2173", -8516"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0024')
+# 26 PN0025
+wait('10:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0025')
+track_off(trk_sub,1.1289779436009943,-2.002783309686385,timeout=5)   #  4064", -7210"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0025')
+# 27 PN0026
+wait('10:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0026')
+track_off(trk_sub,1.5012836946029386,-1.5828164534191107,timeout=5)   #  5404", -5698"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0026')
+# 28 PN0027
+wait('10:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0027')
+track_off(trk_sub,1.711818870868305,-1.1441119139693874,timeout=5)   #  6162", -4118"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0027')
+# 29 PN0028
+wait('10:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0028')
+track_off(trk_sub,1.7632856488199649,-0.7230467126303963,timeout=5)   #  6347", -2602"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0028')
+# 30 PN0029
+wait('10:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0029')
+track_off(trk_sub,1.6702226220724803,-0.3516659997986416,timeout=5)   #  6012", -1265"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0029')
+# 31 PN0030
+wait('10:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0030')
+track_off(trk_sub,1.4583700067230578,-0.05557645361176977,timeout=5)   #  5250", -200"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0030')
+# 32 PN0031
+wait('10:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0031')
+track_off(trk_sub,1.1629488532910546,0.14765656370216163,timeout=5)   #  4186", 531"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0031')
+# 33 PN0032
+wait('11:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0032')
+track_off(trk_sub,0.8258098916976229,0.24951320389504783,timeout=5)   #  2972", 898"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0032')
+# 34 PN0033
+wait('11:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0033')
+track_off(trk_sub,0.49165625246892214,0.2508687473123446,timeout=5)   #  1769", 903"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0033')
+# 35 PN0034
+wait('11:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0034')
+track_off(trk_sub,0.20379320699339598,0.16167470279186286,timeout=5)   #  733", 582"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0034')
+# 36 3C286
+wait('11:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,0.0,0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 37 PN0036
+wait('11:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0036')
+track_off(trk_sub,0.29106797874310636,0.06573179774085733,timeout=5)   #  1047", 236"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0036')
+# 38 PN0037
+wait('11:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0037')
+track_off(trk_sub,0.6121125137365774,0.0370462022861508,timeout=5)   #  2203", 133"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0037')
+# 39 PN0038
+wait('11:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0038')
+track_off(trk_sub,0.9178653602132967,-0.08872505505317307,timeout=5)   #  3304", -319"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0038')
+# 40 PN0039
+wait('11:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0039')
+track_off(trk_sub,1.1625340116181666,-0.30501214219263534,timeout=5)   #  4185", -1098"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0039')
+# 41 PN0040
+wait('11:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0040')
+track_off(trk_sub,1.3042484737472564,-0.5963480712079015,timeout=5)   #  4695", -2146"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0040')
+# 42 PN0041
+wait('11:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0041')
+track_off(trk_sub,1.3090007940957578,-0.9393553760942557,timeout=5)   #  4712", -3381"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0041')
+# 43 PN0042
+wait('11:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0042')
+track_off(trk_sub,1.1535708110084697,-1.3043194299491214,timeout=5)   #  4152", -4695"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0042')
+# 44 PN0043
+wait('11:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0043')
+track_off(trk_sub,0.8271985876836154,-1.6572512095172063,timeout=5)   #  2977", -5966"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0043')
+# 45 PN0044
+wait('11:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0044')
+track_off(trk_sub,0.33204329450075426,-1.9623099226296399,timeout=5)   #  1195", -7064"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0044')
+# 46 PN0045
+wait('11:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0045')
+track_off(trk_sub,-0.3173168639805088,-2.184431210195764,timeout=5)   #  -1142", -7863"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0045')
+# 47 PN0046
+wait('11:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0046')
+track_off(trk_sub,-1.0949993529775743,-2.291991161768569,timeout=5)   #  -3941", -8251"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0046')
+# 48 PN0047
+wait('11:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0047')
+track_off(trk_sub,-1.9652104480896782,-2.2593311542215835,timeout=5)   #  -7074", -8133"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0047')
+# 49 PN0048
+wait('11:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0048')
+track_off(trk_sub,-2.8836568344138067,-2.068973956381237,timeout=5)   #  -10381", -7448"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0048')
+# 50 PN0049
+wait('11:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0049')
+track_off(trk_sub,-3.7988177602630473,-1.7133774376628623,timeout=5)   #  -13675", -6168"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0049')
+# 51 PN0050
+wait('11:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0050')
+track_off(trk_sub,-4.653036907982062,-1.1960977612077437,timeout=5)   #  -16750", -4305"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0050')
+# 52 PN0051
+wait('11:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0051')
+track_off(trk_sub,-5.383526770801114,-0.5322677448849289,timeout=5)   #  -19380", -1916"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0051')
+# 53 PN0052
+wait('11:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0052')
+track_off(trk_sub,-5.923555902576035,0.2516637479075641,timeout=5)   #  -21324", 905"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0052')
+# 54 PN0053
+wait('11:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0053')
+track_off(trk_sub,-5.1865257387743675,2.0800327600527666,timeout=5)   #  -18671", 7488"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0053')
+# 55 PN0054
+wait('11:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0054')
+track_off(trk_sub,-5.430091149453481,1.275312706123743,timeout=5)   #  -19548", 4591"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0054')
+# 56 PN0055
+wait('11:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0055')
+track_off(trk_sub,-5.357461054508163,0.49847895827872196,timeout=5)   #  -19286", 1794"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0055')
+# 57 PN0056
+wait('11:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0056')
+track_off(trk_sub,-5.01525395646011,-0.2077443075544224,timeout=5)   #  -18054", -747"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0056')
+# 58 PN0057
+wait('11:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0057')
+track_off(trk_sub,-4.459103166132813,-0.808563222969149,timeout=5)   #  -16052", -2910"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0057')
+# 59 PN0058
+wait('11:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0058')
+track_off(trk_sub,-3.7488674028816225,-1.2788273301926913,timeout=5)   #  -13495", -4603"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0058')
+# 60 PN0059
+wait('11:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0059')
+track_off(trk_sub,-2.945173477208277,-1.6040596139965628,timeout=5)   #  -10602", -5774"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0059')
+# 61 PN0060
+wait('11:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0060')
+track_off(trk_sub,-2.106957237293695,-1.7807625320118483,timeout=5)   #  -7585", -6410"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0060')
+# 62 PN0061
+wait('11:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0061')
+track_off(trk_sub,-1.2896107042843994,-1.8160040327719782,timeout=5)   #  -4642", -6537"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0061')
+# 63 PN0062
+wait('12:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0062')
+track_off(trk_sub,-0.5433727042023153,-1.7263313818193884,timeout=5)   #  -1956", -6214"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0062')
+# 64 PN0063
+wait('12:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0063')
+track_off(trk_sub,0.08832065476808992,-1.536100809340757,timeout=5)   #  317", -5529"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0063')
+# 65 PN0064
+wait('12:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0064')
+track_off(trk_sub,0.5707179540321325,-1.2753452379595802,timeout=5)   #  2054", -4591"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0064')
+# 66 PN0065
+wait('12:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0065')
+track_off(trk_sub,0.8799160103395403,-0.9773287047160183,timeout=5)   #  3167", -3518"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0065')
+# 67 PN0066
+wait('12:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0066')
+track_off(trk_sub,1.0051673407372301,-0.6759530909052289,timeout=5)   #  3618", -2433"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0066')
+# 68 PN0067
+wait('12:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0067')
+track_off(trk_sub,0.9509565531449382,-0.4031895071514894,timeout=5)   #  3423", -1451"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0067')
+# 69 PN0068
+wait('12:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0068')
+track_off(trk_sub,0.7382514965263829,-0.18670284272525717,timeout=5)   #  2657", -672"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0068')
+# 70 PN0069
+wait('12:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0069')
+track_off(trk_sub,0.4042394192382541,-0.04782388943185683,timeout=5)   #  1455", -172"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0069')
+# 71 3C286
+wait('12:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,0.0,-0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 72 PN0071
+wait('12:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0071')
+track_off(trk_sub,0.3114408443982288,-0.1485652040523896,timeout=5)   #  1121", -534"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0071')
+# 73 PN0072
+wait('12:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0072')
+track_off(trk_sub,0.48616441303768154,-0.36042501180383746,timeout=5)   #  1750", -1297"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0072')
+# 74 PN0073
+wait('12:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0073')
+track_off(trk_sub,0.485927462769218,-0.6096196564118617,timeout=5)   #  1749", -2194"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0073')
+# 75 PN0074
+wait('12:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0074')
+track_off(trk_sub,0.2889261723544398,-0.8657729547884451,timeout=5)   #  1040", -3116"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0074')
+# 76 PN0075
+wait('12:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0075')
+track_off(trk_sub,-0.10934792371113561,-1.0964349010557228,timeout=5)   #  -393", -3947"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0075')
+# 77 PN0076
+wait('12:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0076')
+track_off(trk_sub,-0.6969252190345403,-1.2696073732427573,timeout=5)   #  -2508", -4570"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0076')
+# 78 PN0077
+wait('12:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0077')
+track_off(trk_sub,-1.4471411808856052,-1.356285217376743,timeout=5)   #  -5209", -4882"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0077')
+# 79 PN0078
+wait('12:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0078')
+track_off(trk_sub,-2.3206795366585253,-1.3328424544945616,timeout=5)   #  -8354", -4798"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0078')
+# 80 PN0079
+wait('12:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0079')
+track_off(trk_sub,-3.267332934099156,-1.1831013288814032,timeout=5)   #  -11762", -4259"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0079')
+# 81 PN0080
+wait('12:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0080')
+track_off(trk_sub,-4.227174824172286,-0.8999399714637571,timeout=5)   #  -15217", -3239"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0080')
+# 82 PN0081
+wait('12:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0081')
+track_off(trk_sub,-5.131102488546689,-0.4863215880427999,timeout=5)   #  -18471", -1750"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0081')
+# 83 PN0082
+wait('12:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0082')
+track_off(trk_sub,-5.9009512662475885,0.044337244220180594,timeout=5)   #  -21243", 159"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0082')
+# 84 PN0083
+wait('12:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0083')
+track_off(trk_sub,-6.449753777311293,0.6685013730670276,timeout=5)   #  -23219", 2406"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0083')
+# 85 PN0084
+wait('12:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0084')
+track_off(trk_sub,-6.683095901331099,1.353553741995387,timeout=5)   #  -24059", 4872"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0084')
+# 86 PN0085
+wait('12:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0085')
+track_off(trk_sub,-6.5030477378531755,2.059488643450496,timeout=5)   #  -23410", 7414"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0085')
+# 87 PN0086
+wait('12:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0086')
+track_off(trk_sub,-5.8165720998721415,2.741174147429408,timeout=5)   #  -20939", 9868"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0086')
+# 88 PN0087
+wait('12:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0087')
+track_off(trk_sub,-4.550136652844728,3.3510586739115507,timeout=5)   #  -16380", 12063"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0087')
+# 89 PN0088
+wait('12:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0088')
+track_off(trk_sub,0.7216897114301676,3.7241711223064256,timeout=5)   #  2598", 13407"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0088')
+# 90 PN0089
+wait('12:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0089')
+track_off(trk_sub,-1.536985866056253,3.472540189618292,timeout=5)   #  -5533", 12501"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0089')
+# 91 PN0090
+wait('12:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0090')
+track_off(trk_sub,-3.45273533808424,3.0686600097886423,timeout=5)   #  -12429", 11047"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0090')
+# 92 PN0091
+wait('12:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0091')
+track_off(trk_sub,-4.917703228248744,2.5521681594654093,timeout=5)   #  -17703", 9187"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0091')
+# 93 PN0092
+wait('13:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0092')
+track_off(trk_sub,-5.8850556501375895,1.9664415660507988,timeout=5)   #  -21186", 7079"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0092')
+# 94 PN0093
+wait('13:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0093')
+track_off(trk_sub,-6.361453834035024,1.355621689849635,timeout=5)   #  -22901", 4880"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0093')
+# 95 PN0094
+wait('13:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0094')
+track_off(trk_sub,-6.393059989443486,0.7617259146888539,timeout=5)   #  -23015", 2742"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0094')
+# 96 PN0095
+wait('13:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0095')
+track_off(trk_sub,-6.050738273265034,0.22202077767453665,timeout=5)   #  -21782", 799"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0095')
+# 97 PN0096
+wait('13:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0096')
+track_off(trk_sub,-5.417883535858848,-0.23318757935286727,timeout=5)   #  -19504", -839"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0096')
+# 98 PN0097
+wait('13:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0097')
+track_off(trk_sub,-4.582080113279044,-0.5822194678500008,timeout=5)   #  -16495", -2095"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0097')
+# 99 PN0098
+wait('13:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0098')
+track_off(trk_sub,-3.630229952740535,-0.8130540967103606,timeout=5)   #  -13068", -2926"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0098')
+# 100 PN0099
+wait('13:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0099')
+track_off(trk_sub,-2.6461125337831333,-0.9236792381609384,timeout=5)   #  -9526", -3325"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0099')
+# 101 PN0100
+wait('13:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0100')
+track_off(trk_sub,-1.7092186392221873,-0.9217522511042484,timeout=5)   #  -6153", -3318"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0100')
+# 102 PN0101
+wait('13:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0101')
+track_off(trk_sub,-0.8937513081283521,-0.8236096546073904,timeout=5)   #  -3217", -2964"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0101')
+# 103 PN0102
+wait('13:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0102')
+track_off(trk_sub,-0.26685545802658694,-0.6527027110465372,timeout=5)   #  -960", -2349"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0102')
+# 104 PN0103
+wait('13:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0103')
+track_off(trk_sub,0.11469391711865015,-0.43757159003760177,timeout=5)   #  412", -1575"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0103')
+# 105 PN0104
+wait('13:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0104')
+track_off(trk_sub,0.20977820381394782,-0.2094985922237197,timeout=5)   #  755", -754"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0104')
+# 106 3C286
+wait('13:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,0.0,-0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 107 PN0106
+wait('13:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0106')
+track_off(trk_sub,-0.15844858190367098,-0.21429700179324696,timeout=5)   #  -570", -771"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0106')
+# 108 PN0107
+wait('13:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0107')
+track_off(trk_sub,-0.6240346589032886,-0.39747121408998826,timeout=5)   #  -2246", -1430"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0107')
+# 109 PN0108
+wait('13:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0108')
+track_off(trk_sub,-1.363798556287167,-0.5208946013586886,timeout=5)   #  -4909", -1875"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0108')
+# 110 PN0109
+wait('13:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0109')
+track_off(trk_sub,-2.324600607066755,-0.5607608125958098,timeout=5)   #  -8368", -2018"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0109')
+# 111 PN0110
+wait('13:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0110')
+track_off(trk_sub,-3.4372018837347618,-0.5000868298478214,timeout=5)   #  -12373", -1800"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0110')
+# 112 PN0111
+wait('13:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0111')
+track_off(trk_sub,-4.618183200478385,-0.33025199714850173,timeout=5)   #  -16625", -1188"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0111')
+# 113 PN0112
+wait('13:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0112')
+track_off(trk_sub,-5.769485257815391,-0.051965787427621625,timeout=5)   #  -20770", -187"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0112')
+# 114 PN0113
+wait('13:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0113')
+track_off(trk_sub,-6.775991791943349,0.324408755022645,timeout=5)   #  -24393", 1167"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0113')
+# 115 PN0114
+wait('13:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0114')
+track_off(trk_sub,-7.502195566257105,0.7792085937482369,timeout=5)   #  -27007", 2805"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0114')
+# 116 PN0115
+wait('13:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0115')
+track_off(trk_sub,-7.790117046833469,1.2844912387320073,timeout=5)   #  -28044", 4624"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0115')
+# 117 PN0116
+wait('13:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0116')
+track_off(trk_sub,-7.462355305704641,1.8056695737257695,timeout=5)   #  -26864", 6500"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0116')
+# 118 PN0117
+wait('13:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0117')
+track_off(trk_sub,-6.336326190553395,2.3036683984417645,timeout=5)   #  -22810", 8293"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0117')
+# 119 PN0118
+wait('13:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0118')
+track_off(trk_sub,-4.257274899179646,2.737475329448265,timeout=5)   #  -15326", 9854"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0118')
+# 120 PN0119
+wait('13:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0119')
+track_off(trk_sub,-1.1543595665665554,3.0669311796582495,timeout=5)   #  -4155", 11040"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0119')
+# 121 PN0120
+wait('13:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0120')
+track_off(trk_sub,2.888168286325689,3.25558640465824,timeout=5)   #  10397", 11720"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0120')
+# 122 PN0121
+wait('13:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0121')
+track_off(trk_sub,7.575447861835288,3.2734418923143367,timeout=5)   #  27271", 11784"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0121')
+# 123 PN0122
+wait('14:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0122')
+track_off(trk_sub,12.409970132865253,3.0993949260039866,timeout=5)   #  44675", 11157"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0122')
+# 124 PN0123
+wait('14:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0123')
+track_off(trk_sub,17.72177208091394,1.6441383622536587,timeout=5)   #  63798", 5918"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0123')
+# 125 PN0124
+wait('14:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0124')
+track_off(trk_sub,15.54615476512319,2.197227483494548,timeout=5)   #  55966", 7910"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0124')
+# 126 PN0125
+wait('14:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0125')
+track_off(trk_sub,12.34204665328481,2.5701810515099197,timeout=5)   #  44431", 9252"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0125')
+# 127 PN0126
+wait('14:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0126')
+track_off(trk_sub,8.417473323391976,2.759912467019831,timeout=5)   #  30302", 9935"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0126')
+# 128 PN0127
+wait('14:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0127')
+track_off(trk_sub,4.230926996011131,2.7750047890199476,timeout=5)   #  15231", 9990"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0127')
+# 129 PN0128
+wait('14:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0128')
+track_off(trk_sub,0.2803369577847069,2.6344490200423256,timeout=5)   #  1009", 9484"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0128')
+# 130 PN0129
+wait('14:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0129')
+track_off(trk_sub,-3.024432403214055,2.3657855286854166,timeout=5)   #  -10887", 8516"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0129')
+# 131 PN0130
+wait('14:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0130')
+track_off(trk_sub,-5.442649849924858,2.002783309686385,timeout=5)   #  -19593", 7210"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0130')
+# 132 PN0131
+wait('14:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0131')
+track_off(trk_sub,-6.911719208264227,1.582816453419111,timeout=5)   #  -24882", 5698"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0131')
+# 133 PN0132
+wait('14:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0132')
+track_off(trk_sub,-7.504150895319835,1.1441119139693878,timeout=5)   #  -27014", 4118"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0132')
+# 134 PN0133
+wait('14:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0133')
+track_off(trk_sub,-7.369076641971724,0.7230467126303967,timeout=5)   #  -26528", 2602"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0133')
+# 135 PN0134
+wait('14:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0134')
+track_off(trk_sub,-6.684320927108156,0.3516659997986419,timeout=5)   #  -24063", 1265"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0134')
+# 136 PN0135
+wait('14:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0135')
+track_off(trk_sub,-5.627322047333258,0.055576453611769994,timeout=5)   #  -20258", 200"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0135')
+# 137 PN0136
+wait('14:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0136')
+track_off(trk_sub,-4.362376252267596,-0.14765656370216146,timeout=5)   #  -15704", -531"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0136')
+# 138 PN0137
+wait('14:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0137')
+track_off(trk_sub,-3.0380534265979153,-0.2495132038950477,timeout=5)   #  -10936", -898"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0137')
+# 139 PN0138
+wait('14:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0138')
+track_off(trk_sub,-1.7891607610214926,-0.25086874731234454,timeout=5)   #  -6440", -903"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0138')
+# 140 PN0139
+wait('14:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0139')
+track_off(trk_sub,-0.7391509418157135,-0.16167470279186283,timeout=5)   #  -2660", -582"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0139')
+# 141 3C286
+wait('14:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,-0.0,0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 142 PN0141
+wait('14:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0141')
+track_off(trk_sub,-1.0351260009859926,-0.06573179774085741,timeout=5)   #  -3726", -236"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0141')
+# 143 PN0142
+wait('14:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0142')
+track_off(trk_sub,-2.1465365777311,-0.03704620228615094,timeout=5)   #  -7727", -133"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0142')
+# 144 PN0143
+wait('14:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0143')
+track_off(trk_sub,-3.2006196550105916,0.0887250550531728,timeout=5)   #  -11522", 319"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0143')
+# 145 PN0144
+wait('14:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0144')
+track_off(trk_sub,-4.062543143277511,0.30501214219263495,timeout=5)   #  -14625", 1098"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0144')
+# 146 PN0145
+wait('14:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0145')
+track_off(trk_sub,-4.597007469710989,0.596348071207901,timeout=5)   #  -16549", 2146"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0145')
+# 147 PN0146
+wait('14:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0146')
+track_off(trk_sub,-4.673194622445057,0.9393553760942551,timeout=5)   #  -16823", 3381"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0146')
+# 148 PN0147
+wait('14:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0147')
+track_off(trk_sub,-4.176793843975317,1.304319429949121,timeout=5)   #  -15036", 4695"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0147')
+# 149 PN0148
+wait('14:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0148')
+track_off(trk_sub,-3.0308487336617866,1.6572512095172058,timeout=5)   #  -10911", 5966"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0148')
+# 150 PN0149
+wait('14:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0149')
+track_off(trk_sub,-1.2236146248473085,1.9623099226296399,timeout=5)   #  -4405", 7064"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0149')
+# 151 PN0150
+wait('14:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0150')
+track_off(trk_sub,1.1643912077092509,2.184431210195764,timeout=5)   #  4191", 7863"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0150')
+# 152 PN0151
+wait('14:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0151')
+track_off(trk_sub,3.9480579813746095,2.2919911617685695,timeout=5)   #  14213", 8251"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0151')
+# 153 PN0152
+wait('15:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0152')
+track_off(trk_sub,6.854095660824459,2.259331154221584,timeout=5)   #  24674", 8133"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0152')
+# 154 PN0153
+wait('15:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0153')
+track_off(trk_sub,9.569352474982793,2.0689739563812375,timeout=5)   #  34449", 7448"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0153')
+# 155 PN0154
+wait('15:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0154')
+track_off(trk_sub,11.806077515311298,1.7133774376628632,timeout=5)   #  42501", 6168"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0154')
+# 156 PN0155
+wait('15:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0155')
+track_off(trk_sub,13.357593807340384,1.1960977612077448,timeout=5)   #  48087", 4305"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0155')
+# 157 PN0156
+wait('15:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0156')
+track_off(trk_sub,14.123434832315796,0.5322677448849304,timeout=5)   #  50844", 1916"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0156')
+# 158 PN0157
+wait('15:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0157')
+track_off(trk_sub,14.10129046487885,-0.2516637479075625,timeout=5)   #  50764", -905"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0157')
+# 159 PN0158
+wait('15:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0158')
+track_off(trk_sub,10.338015491539092,-2.080032760052766,timeout=5)   #  37216", -7488"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0158')
+# 160 PN0159
+wait('15:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0159')
+track_off(trk_sub,11.226668627165807,-1.2753127061237426,timeout=5)   #  40416", -4591"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0159')
+# 161 PN0160
+wait('15:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0160')
+track_off(trk_sub,11.467066466187168,-0.4984789582787216,timeout=5)   #  41281", -1794"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0160')
+# 162 PN0161
+wait('15:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0161')
+track_off(trk_sub,11.051572927616139,0.20774430755442277,timeout=5)   #  39785", 747"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0161')
+# 163 PN0162
+wait('15:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0162')
+track_off(trk_sub,10.028376899749324,0.8085632229691493,timeout=5)   #  36102", 2910"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0162')
+# 164 PN0163
+wait('15:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0163')
+track_off(trk_sub,8.509468868421948,1.2788273301926916,timeout=5)   #  30634", 4603"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0163')
+# 165 PN0164
+wait('15:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0164')
+track_off(trk_sub,6.663264626599979,1.604059613996563,timeout=5)   #  23987", 5774"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0164')
+# 166 PN0165
+wait('15:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0165')
+track_off(trk_sub,4.69070506547882,1.7807625320118485,timeout=5)   #  16886", 6410"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0165')
+# 167 PN0166
+wait('15:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0166')
+track_off(trk_sub,2.7915155411916044,1.8160040327719784,timeout=5)   #  10049", 6537"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0166')
+# 168 PN0167
+wait('15:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0167')
+track_off(trk_sub,1.1319740711530262,1.7263313818193884,timeout=5)   #  4075", 6214"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0167')
+# 169 PN0168
+wait('15:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0168')
+track_off(trk_sub,-0.1756976256039437,1.536100809340757,timeout=5)   #  -632", 5529"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0168')
+# 170 PN0169
+wait('15:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0169')
+track_off(trk_sub,-1.0786903853900038,1.2753452379595802,timeout=5)   #  -3883", 4591"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0169')
+# 171 PN0170
+wait('15:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0170')
+track_off(trk_sub,-1.5765969311809949,0.9773287047160182,timeout=5)   #  -5675", 3518"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0170')
+# 172 PN0171
+wait('15:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0171')
+track_off(trk_sub,-1.7080858221482822,0.6759530909052288,timeout=5)   #  -6149", 2433"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0171')
+# 173 PN0172
+wait('15:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0172')
+track_off(trk_sub,-1.5368288825740044,0.4031895071514893,timeout=5)   #  -5532", 1451"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0172')
+# 174 PN0173
+wait('15:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0173')
+track_off(trk_sub,-1.139958100392558,0.1867028427252571,timeout=5)   #  -4103", 672"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0173')
+# 175 PN0174
+wait('15:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0174')
+track_off(trk_sub,-0.6000227050500014,0.0478238894318568,timeout=5)   #  -2160", 172"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0174')
+# 176 3C286
+wait('15:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('3C286')
+track_off(trk_sub,0.0,0.0,timeout=5)   #  0", 0"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'3C286')
+# 177 PN0176
+wait('15:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0176')
+track_off(trk_sub,-0.4393209438662404,0.14856520405238965,timeout=5)   #  -1581", 534"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0176')
+# 178 PN0177
+wait('15:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0177')
+track_off(trk_sub,-0.676435921544663,0.3604250118038375,timeout=5)   #  -2435", 1297"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0177')
+# 179 PN0178
+wait('15:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0178')
+track_off(trk_sub,-0.6686556281632511,0.6096196564118617,timeout=5)   #  -2407", 2194"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0178')
+# 180 PN0179
+wait('15:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0179')
+track_off(trk_sub,-0.39336716657609566,0.8657729547884451,timeout=5)   #  -1416", 3116"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0179')
+# 181 PN0180
+wait('15:56:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0180')
+track_off(trk_sub,0.14702030136639715,1.0964349010557228,timeout=5)   #  529", 3947"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0180')
+# 182 PN0181
+wait('15:58:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0181')
+track_off(trk_sub,0.9214868447490956,1.2696073732427573,timeout=5)   #  3317", 4570"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0181')
+# 183 PN0182
+wait('16:0:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0182')
+track_off(trk_sub,1.8699991421204423,1.3562852173767428,timeout=5)   #  6731", 4882"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0182')
+# 184 PN0183
+wait('16:2:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0183')
+track_off(trk_sub,2.9077606393867423,1.332842454494561,timeout=5)   #  10467", 4798"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0183')
+# 185 PN0184
+wait('16:4:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0184')
+track_off(trk_sub,3.934365051411986,1.1831013288814027,timeout=5)   #  14163", 4259"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0184')
+# 186 PN0185
+wait('16:6:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0185')
+track_off(trk_sub,4.846392459613616,0.8999399714637564,timeout=5)   #  17447", 3239"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0185')
+# 187 PN0186
+wait('16:8:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0186')
+track_off(trk_sub,5.550554484429167,0.48632158804279924,timeout=5)   #  19981", 1750"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0186')
+# 188 PN0187
+wait('16:10:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0187')
+track_off(trk_sub,5.974243127343168,-0.04433724422018126,timeout=5)   #  21507", -159"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0187')
+# 189 PN0188
+wait('16:12:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0188')
+track_off(trk_sub,6.071342170097299,-0.6685013730670284,timeout=5)   #  21856", -2406"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0188')
+# 190 PN0189
+wait('16:14:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0189')
+track_off(trk_sub,5.822940104911187,-1.3535537419953876,timeout=5)   #  20962", -4872"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0189')
+# 191 PN0190
+wait('16:16:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0190')
+track_off(trk_sub,5.234135583058622,-2.0594886434504964,timeout=5)   #  18842", -7414"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0190')
+# 192 PN0191
+wait('16:18:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0191')
+track_off(trk_sub,4.328841236218183,-2.7411741474294082,timeout=5)   #  15583", -9868"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0191')
+# 193 PN0192
+wait('16:20:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0192')
+track_off(trk_sub,3.1443932119432856,-3.3510586739115507,timeout=5)   #  11319", -12063"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0192')
+# 194 PN0193
+wait('16:22:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0193')
+track_off(trk_sub,-0.47080330710129903,-3.724171122306426,timeout=5)   #  -1694", -13407"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0193')
+# 195 PN0194
+wait('16:24:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0194')
+track_off(trk_sub,0.9912787778704144,-3.4725401896182913,timeout=5)   #  3568", -12501"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0194')
+# 196 PN0195
+wait('16:26:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0195')
+track_off(trk_sub,2.2268291869863974,-3.0686600097886414,timeout=5)   #  8016", -11047"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0195')
+# 197 PN0196
+wait('16:28:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0196')
+track_off(trk_sub,3.1985976833645897,-2.552168159465408,timeout=5)   #  11514", -9187"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0196')
+# 198 PN0197
+wait('16:30:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0197')
+track_off(trk_sub,3.880373185724575,-1.9664415660507975,timeout=5)   #  13969", -7079"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0197')
+# 199 PN0198
+wait('16:32:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0198')
+track_off(trk_sub,4.260072700143534,-1.3556216898496336,timeout=5)   #  15336", -4880"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0198')
+# 200 PN0199
+wait('16:34:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0199')
+track_off(trk_sub,4.342800330089492,-0.7617259146888524,timeout=5)   #  15634", -2742"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0199')
+# 201 PN0200
+wait('16:36:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0200')
+track_off(trk_sub,4.152937245699882,-0.22202077767453532,timeout=5)   #  14950", -799"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0200')
+# 202 PN0201
+wait('16:38:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0201')
+track_off(trk_sub,3.7342535730459696,0.23318757935286838,timeout=5)   #  13443", 839"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0201')
+# 203 PN0202
+wait('16:40:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0202')
+track_off(trk_sub,3.1472692061408165,0.5822194678500017,timeout=5)   #  11330", 2095"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0202')
+# 204 PN0203
+wait('16:42:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0203')
+track_off(trk_sub,2.46373689275809,0.8130540967103613,timeout=5)   #  8869", 2926"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0203')
+# 205 PN0204
+wait('16:44:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0204')
+track_off(trk_sub,1.7590126173723062,0.9236792381609389,timeout=5)   #  6332", 3325"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0204')
+# 206 PN0205
+wait('16:46:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0205')
+track_off(trk_sub,1.1037587995352438,0.9217522511042487,timeout=5)   #  3973", 3318"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0205')
+# 207 PN0206
+wait('16:48:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0206')
+track_off(trk_sub,0.5566559412979115,0.8236096546073906,timeout=5)   #  2003", 2964"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0206')
+# 208 PN0207
+wait('16:50:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0207')
+track_off(trk_sub,0.15940468820169476,0.6527027110465372,timeout=5)   #  573", 2349"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0207')
+# 209 PN0208
+wait('16:52:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0208')
+track_off(trk_sub,-0.0654697412395907,0.4375715900376017,timeout=5)   #  -235", 1575"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0208')
+# 210 PN0209
+wait('16:54:43','15/9/2024')
+stpndas(CORR,cor_sub,timeout=0)
+load_source('PN0209')
+track_off(trk_sub,-0.11427184322801966,0.20949859222371967,timeout=5)   #  -411", 754"
+corrapi_fstrt.fstart_proj(CORR,cor_sub,'PN0209')
+# end

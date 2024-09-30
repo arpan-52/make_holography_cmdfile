@@ -658,3 +658,8 @@ def imshow(im, vmin=None, vmax=None, extent=None):
 
 
 
+def rotation(x,y,theta):
+    import numpy as N
+    x_rot = x*N.cos(N.radians(theta))-y*N.sin(N.radians(theta))
+    y_rot = y*N.cos(N.radians(theta))+x*N.sin(N.radians(theta))
+    return x_rot,y_rot

@@ -1,5 +1,4 @@
 
-
 import numpy as N
 import pylab as pl
 import ephem, libs
